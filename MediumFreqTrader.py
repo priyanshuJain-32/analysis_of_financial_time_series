@@ -124,7 +124,7 @@ for ticker in stocks:
     
     print("Stock Ticker: {}".format(ticker))
     print("Simple Return lb_test: ".format(lb_test["simple_return"]["GOOG"]))
-    print("Log Return lb_test: ".format(lb_test["log_return"]["GOOG"])
+    print("Log Return lb_test: ".format(lb_test["log_return"]["GOOG"]))
     
 
 """
