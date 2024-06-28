@@ -88,18 +88,18 @@ for ticker in stocks:
 """
 JARQUE-BERA TEST RESULTS:
     
-All the return series have a p-value of 0.0 which is lesser than .05 and hence we can 
-reject the null hypothesis and conclude that none of the series follow normal distribution
+    All the return series have a p-value of 0.0 which is lesser than .05 and hence we can 
+    reject the null hypothesis and conclude that none of the series follow normal distribution
 
 """
 
 """
 TESTING INDIVIDUAL ACF
 
-Since none of the return series are normally distributed it is safe to assume that all of them
-will be weak form stationary. We will check for stationarity using Auto-correlation functions with
-different lags and see which lag values give us the best stationarity using different information
-criteria values.
+    Since none of the return series are normally distributed it is safe to assume that all of them
+    will be weak form stationary. We will check for stationarity using Auto-correlation functions with
+    different lags and see which lag values give us the best stationarity using different information
+    criteria values.
 
 """
 for ticker in stocks:
@@ -108,8 +108,10 @@ for ticker in stocks:
 
 """
 PORTMANTEAU TEST - LJUNG BOX TEST
-Ho:= No autocorrelation exists
-Ha:= There is autocorrelation
+
+    Ho:= No autocorrelation exists
+    Ha:= There is autocorrelation
+
 This is test of autocorrelation. 
 """
 lb_test = {"simple_return": {}, "log_return": {}}
@@ -120,23 +122,10 @@ for ticker in stocks:
     test = acorr_ljungbox(log_return[ticker].dropna(), lags=np.arange(1,40))
     lb_test["log_return"][ticker] = test
     
-lb_test["simple_return"]["GOOG"]
-lb_test["log_return"]["GOOG"]
+    print("Stock Ticker: {}".format(ticker))
+    print("Simple Return lb_test: ".format(lb_test["simple_return"]["GOOG"]))
+    print("Log Return lb_test: ".format(lb_test["log_return"]["GOOG"])
     
-lb_test["simple_return"]["META"]
-lb_test["log_return"]["META"]
-
-lb_test["simple_return"]["NVDA"]
-lb_test["log_return"]["NVDA"]
-
-lb_test["simple_return"]["MSFT"]
-lb_test["log_return"]["MSFT"]
-
-lb_test["simple_return"]["AMZN"]
-lb_test["log_return"]["AMZN"]
-
-lb_test["simple_return"]["^GSPC"]
-lb_test["log_return"]["^GSPC"]
 
 """
 PORTMANTEAU TEST RESULTS
