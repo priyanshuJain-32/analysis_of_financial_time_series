@@ -4,6 +4,9 @@ I am currently working on developing skills in the field of time series analysis
 
 ## What has been implemented so far?
 
+### Book_notes (WIP)
+This section is under development and I keep adding as I read along.
+
 ### Chapter 1 - Financial Time Series and Their Characteristics
 1. **Download data:** Download data for stocks on various tickers from Yahoo Finance.
 2. **Returns:** Calculate simple and log-return for stocks.
